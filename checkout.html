@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHE OUT | Checkout</title>
+    <link rel="icon" href="assests/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="top_header">
+            <div class="container">
+                <a href="index.html" class="logo"><img src="assests/icon.png" alt="Logo"></a>
+                <div class="checkout_title">
+                    <h2>Order Checkout</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout_wrapper" style="padding: 40px 0; max-width: 1200px; margin: 0 auto;">
+        <div class="container" style="display: flex; gap: 30px; flex-wrap: wrap;">
+            
+            <div class="checkout_table_container" style="flex: 2; min-width: 300px;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border_color); padding-bottom: 10px;">
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="checkout_items_body">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="order_summary_panel" style="flex: 1; min-width: 300px; background: var(--bg_color); padding: 25px; border-radius: 8px;">
+                <h3>Summary</h3>
+                <hr style="border: 0; border-top: 1px solid var(--border_color); margin: 15px 0;">
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                    <p>Subtotal</p>
+                    <span id="checkout_subtotal" style="font-weight: bold;">$0</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
+                    <p>Shipping</p>
+                    <span style="font-weight: bold; color: green;">Free</span>
+                </div>
+                
+                <hr style="border: 0; border-top: 1px solid var(--border_color); margin: 15px 0;">
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+                    <p style="font-size: 18px; font-weight: bold;">Total Cost</p>
+                    <span id="checkout_total" style="font-size: 18px; font-weight: bold;">$0</span>
+                </div>
+
+                <button class="btn" style="width: 100%; padding: 12px; background: var(--main_color); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
+                    Place Order
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+            <div class="row">
+                <h4>Quick Links</h4>
+                <div class="links" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Your Account</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Service & Support</h4>
+                <div class="links" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                    <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_footer" style="background: var(--bg_color); padding: 20px 0; text-align: center;">
+            <div class="container">
+                <p>&copy; <span>SHE OUT STORE.</span> All Rights Reserved</p>
+                <div class="payment_img" style="margin-top: 10px;">
+                    <img src="assests/payment_method.png" alt="Payment Methods">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/items_home.js"></script>
+    <script scr="js/swiper.js"></script>
+</body>
+</html>

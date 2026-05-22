@@ -1,0 +1,161 @@
+[
+    {
+        "id": 0,
+        "img": "img/product/0.png",
+        "name": "Oversized Pink Hoodie - Streetwear Edition",
+        "price": 45,
+        "category": "electronics"
+    },
+    {
+        "id": 1,
+        "img": "img/product/1.png",
+        "name": "Pastel Tote Bag with Aesthetic Prints",
+        "price": 20,
+        "category": "mobiles"
+    },
+    {
+        "id": 2,
+        "img": "img/product/2.png",
+        "name": "Matte Liquid Lipstick Set (5 Shades)",
+        "price": 35,
+        "category": "electronics"
+    },
+    {
+        "id": 3,
+        "img": "img/product/3.png",
+        "name": "Hydrating Serum with Hyaluronic Acid",
+        "price": 25,
+        "category": "electronics"
+    },
+    {
+        "id": 4,
+        "img": "img/product/4.png",
+        "name": "Cargo Pants - Cyber Pink Style",
+        "price": 55,
+        "category": "mobiles"
+    },
+    {
+        "id": 5,
+        "img": "img/product/5.png",
+        "name": "Silver Butterfly Chain Necklace",
+        "price": 15,
+        "category": "electronics"
+    },
+    {
+        "id": 6,
+        "img": "img/product/6.png",
+        "name": "Aesthetic Claw Clips Set (4 Packs)",
+        "price": 12,
+        "old_price": 18,
+        "category": "appliances"
+    },
+    {
+        "id": 7,
+        "img": "img/product/7.png",
+        "name": "Glow Face Palette - Highlighter & Blush",
+        "price": 30,
+        "old_price": 40,
+        "category": "mobiles"
+    },
+    {
+        "id": 8,
+        "img": "img/product/8.png",
+        "name": "Cropped Denim Jacket - Vintage Wash",
+        "price": 60,
+        "category": "mobiles"
+    },
+    {
+        "id": 9,
+        "img": "img/product/9.png",
+        "name": "Retro Oval Sunglasses - Pink Tint",
+        "price": 18,
+        "old_price": 25,
+        "category": "appliances"
+    },
+    {
+        "id": 10,
+        "img": "img/product/10.png",
+        "name": "Velvet Scrunchies Pack of 6",
+        "price": 8,
+        "category": "appliances"
+    },
+    {
+        "id": 11,
+        "img": "img/product/11.png",
+        "name": "Graphic Print Tee - Graphic Pink Art",
+        "price": 22,
+        "category": "appliances"
+    },
+    {
+        "id": 12,
+        "img": "img/product/12.png",
+        "name": "Moisturizing Lip Oil - Cherry Glow",
+        "price": 14,
+        "category": "appliances"
+    },
+    {
+        "id": 13,
+        "img": "img/product/13.png",
+        "name": "Mini Makeup Blender Sponge Set",
+        "price": 10,
+        "old_price": 15,
+        "category": "appliances"
+    },
+    {
+        "id": 14,
+        "img": "img/product/14.png",
+        "name": "Chunky Platform Sneakers - All White",
+        "price": 75,
+        "category": "mobiles"
+    },
+    {
+        "id": 15,
+        "img": "img/product/15.png",
+        "name": "Rose Water Facial Mist - Refreshing Formula",
+        "price": 16,
+        "category": "appliances"
+    },
+    {
+        "id": 16,
+        "img": "img/product/16.png",
+        "name": "Cute Bear Airpods Pro Silicone Case",
+        "price": 11,
+        "category": "appliances"
+    },
+    {
+        "id": 17,
+        "img": "img/product/17.png",
+        "name": "Ring Light with Tripod Stand for Vlogging",
+        "price": 40,
+        "category": "electronics"
+    },
+    {
+        "id": 18,
+        "img": "img/product/18.png",
+        "name": "Wireless Over-Ear Headphones - Pink Gold",
+        "price": 85,
+        "category": "mobiles"
+    },
+    {
+        "id": 19,
+        "img": "img/product/19.png",
+        "name": "Clay Face Mask for Deep Cleansing",
+        "price": 19,
+        "category": "appliances"
+    },
+    {
+        "id": 20,
+        "img": "img/product/20.png",
+        "name": "Professional Makeup Brush Set (12 Pcs)",
+        "price": 28,
+        "old_price": 35,
+        "category": "appliances"
+    },
+    {
+        "id": 21,
+        "img": "img/product/21.png",
+        "name": "Aesthetic Desk Organizer Setup Pack",
+        "price": 24,
+        "category": "appliances"
+    }
+]
