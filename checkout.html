@@ -4,101 +4,221 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHE OUT | Checkout</title>
-    <link rel="icon" href="assests/icon.png">
+    <link class="store-icon" rel="icon" href="assests/icon.png">
+    
     <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* تنسيقات مخصصة لصفحة الشيك أوت تليق بـ SHE OUT */
+        .checkout_container {
+            display: flex;
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        .checkout_form, .order_summary {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ffe4e1; /* border_color */
+            flex: 1;
+            min-width: 320px;
+        }
+        .order_summary {
+            max-width: 450px;
+        }
+        .checkout_container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--main_color, #ff69b4);
+            padding-bottom: 10px;
+        }
+        .form_group {
+            margin-bottom: 20px;
+        }
+        .form_group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form_group input, .form_group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ffe4e1;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form_group input:focus {
+            border-color: var(--main_color, #ff69b4);
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.2);
+        }
+        .checkout_item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ffe4e1;
+        }
+        .checkout_item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .checkout_item_info {
+            flex: 1;
+        }
+        .checkout_item_info h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .checkout_item_info p {
+            margin: 0;
+            color: #777;
+            font-size: 14px;
+        }
+        .summary_totals {
+            margin-top: 20px;
+        }
+        .summary_row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+        .summary_row.total_row {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            border-top: 2px solid #ffe4e1;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        .btn_place_order {
+            background-color: var(--main_color, #ff69b4);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-top: 20px;
+        }
+        .btn_place_order:hover {
+            opacity: 0.9;
+        }
+        .empty_checkout_msg {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .empty_checkout_msg a {
+            color: var(--main_color, #ff69b4);
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="top_header">
             <div class="container">
-                <a href="index.html" class="logo"><img src="assests/icon.png" alt="Logo"></a>
-                <div class="checkout_title">
-                    <h2>Order Checkout</h2>
+                <a href="index.html" class="logo"><img src="assests/icon.png" alt="SHE OUT LOGO"></a>
+                <div style="font-size: 24px; font-weight: bold; color: var(--main_color, #ff69b4);">Checkout</div>
+                <div class="header_icons">
+                    <a href="index.html" class="icon" style="color: #333;"><i class="fa-solid fa-arrow-left"></i> Back to shop</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="checkout_wrapper" style="padding: 40px 0; max-width: 1200px; margin: 0 auto;">
-        <div class="container" style="display: flex; gap: 30px; flex-wrap: wrap;">
+    <main>
+        <div class="checkout_container">
             
-            <div class="checkout_table_container" style="flex: 2; min-width: 300px;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid var(--border_color); padding-bottom: 10px;">
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="checkout_items_body">
-                    </tbody>
-                </table>
+            <div class="checkout_form">
+                <h2>Shipping Details</h2>
+                <form id="order_form" onsubmit="handlePlaceOrder(event)">
+                    <div class="form_group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="full_name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form_group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="name@example.com">
+                    </div>
+                    <div class="form_group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="01xxxxxxxxx">
+                    </div>
+                    <div class="form_group">
+                        <label for="address">Shipping Address</label>
+                        <input type="text" id="address" required placeholder="Street Name, Building No, Apartment">
+                    </div>
+                    <div class="form_group">
+                        <label for="city">City</label>
+                        <select id="city" required>
+                            <option value="">Select your city</option>
+                            <option value="cairo">Cairo</option>
+                            <option value="alex">Alexandria</option>
+                            <option value="giza">Giza</option>
+                            <option value="mansoura">Mansoura</option>
+                        </select>
+                    </div>
+                    <div class="form_group">
+                        <label style="margin-bottom: 12px;">Payment Method</label>
+                        <label style="font-weight: normal; display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                            <input type="radio" name="payment" value="cod" checked style="width: auto;">
+                            Cash on Delivery (الدفع عند الاستلام)
+                        </label>
+                    </div>
+                    <button type="submit" class="btn_place_order">Confirm Order (تأكيد الطلب)</button>
+                </form>
             </div>
 
-            <div class="order_summary_panel" style="flex: 1; min-width: 300px; background: var(--bg_color); padding: 25px; border-radius: 8px;">
-                <h3>Summary</h3>
-                <hr style="border: 0; border-top: 1px solid var(--border_color); margin: 15px 0;">
-                
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <p>Subtotal</p>
-                    <span id="checkout_subtotal" style="font-weight: bold;">$0</span>
-                </div>
-                
-                <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
-                    <p>Shipping</p>
-                    <span style="font-weight: bold; color: green;">Free</span>
-                </div>
-                
-                <hr style="border: 0; border-top: 1px solid var(--border_color); margin: 15px 0;">
-                
-                <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
-                    <p style="font-size: 18px; font-weight: bold;">Total Cost</p>
-                    <span id="checkout_total" style="font-size: 18px; font-weight: bold;">$0</span>
-                </div>
+            <div class="order_summary">
+                <h2>Order Summary</h2>
+                <div id="checkout_items_list">
+                    </div>
 
-                <button class="btn" style="width: 100%; padding: 12px; background: var(--main_color); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
-                    Place Order
-                </button>
+                <div class="summary_totals">
+                    <div class="summary_row">
+                        <span>Subtotal</span>
+                        <span id="summary_subtotal">$0</span>
+                    </div>
+                    <div class="summary_row">
+                        <span>Shipping</span>
+                        <span id="summary_shipping">$5</span>
+                    </div>
+                    <div class="summary_row total_row">
+                        <span>Total</span>
+                        <span id="summary_total">$0</span>
+                    </div>
+                </div>
             </div>
 
         </div>
     </main>
 
-    <footer>
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-            <div class="row">
-                <h4>Quick Links</h4>
-                <div class="links" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Your Account</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a>
-                </div>
-            </div>
-            <div class="row">
-                <h4>Service & Support</h4>
-                <div class="links" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
-                </div>
-            </div>
-        </div>
-        <div class="bottom_footer" style="background: var(--bg_color); padding: 20px 0; text-align: center;">
+    <footer style="margin-top: 40px;">
+        <div class="bottom_footer" style="background: var(--bg_color, #fff0f5); padding: 20px 0; text-align: center;">
             <div class="container">
                 <p>&copy; <span>SHE OUT STORE.</span> All Rights Reserved</p>
-                <div class="payment_img" style="margin-top: 10px;">
-                    <img src="assests/payment_method.png" alt="Payment Methods">
-                </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/items_home.js"></script>
-    <script scr="js/swiper.js"></script>
+    <script src="js/checkout.js"></script>
 </body>
 </html>

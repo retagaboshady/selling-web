@@ -40,3 +40,15 @@ const productSlider = new Swiper(".slide_product", {
         }
     }
 });
+var swiper = new Swiper(".slide-swp", {
+    pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable: true,
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+});
