@@ -22,28 +22,28 @@
     },
     {
         "id": 3,
-        "img": "img/product/3.png",
+        "img": "img/product/Pasted image (3).jpg",
         "name": "Hydrating Serum with Hyaluronic Acid",
         "price": 25,
         "category": "electronics"
     },
     {
         "id": 4,
-        "img": "img/product/4.png",
+        "img": "img/product/Pasted image (4).jpg",
         "name": "Cargo Pants - Cyber Pink Style",
         "price": 55,
         "category": "mobiles"
     },
     {
         "id": 5,
-        "img": "img/product/5.png",
+        "img": "img/product/Pasted image (5).jpg",
         "name": "Silver Butterfly Chain Necklace",
         "price": 15,
         "category": "electronics"
     },
     {
         "id": 6,
-        "img": "img/product/6.png",
+        "img": "img/product/Pasted image (6).png",
         "name": "Aesthetic Claw Clips Set (4 Packs)",
         "price": 12,
         "old_price": 18,
@@ -51,7 +51,7 @@
     },
     {
         "id": 7,
-        "img": "img/product/7.png",
+        "img": "img/product/Pasted image (7).jpg",
         "name": "Glow Face Palette - Highlighter & Blush",
         "price": 30,
         "old_price": 40,
@@ -59,14 +59,14 @@
     },
     {
         "id": 8,
-        "img": "img/product/8.png",
+        "img": "img/product/Pasted image (8).jpg",
         "name": "Cropped Denim Jacket - Vintage Wash",
         "price": 60,
         "category": "mobiles"
     },
     {
         "id": 9,
-        "img": "img/product/9.png",
+        "img": "img/product/Pasted image (9).jpg",
         "name": "Retro Oval Sunglasses - Pink Tint",
         "price": 18,
         "old_price": 25,
@@ -74,28 +74,28 @@
     },
     {
         "id": 10,
-        "img": "img/product/10.png",
+        "img": "img/product/Pasted image (10).jpg",
         "name": "Velvet Scrunchies Pack of 6",
         "price": 8,
         "category": "appliances"
     },
     {
         "id": 11,
-        "img": "img/product/11.png",
+        "img": "img/product/Pasted image (11).jpg",
         "name": "Graphic Print Tee - Graphic Pink Art",
         "price": 22,
         "category": "appliances"
     },
     {
         "id": 12,
-        "img": "img/product/12.png",
+        "img": "img/product/Pasted image (12).jpg",
         "name": "Moisturizing Lip Oil - Cherry Glow",
         "price": 14,
         "category": "appliances"
     },
     {
         "id": 13,
-        "img": "img/product/13.png",
+        "img": "img/product/Pasted image (13).jpg",
         "name": "Mini Makeup Blender Sponge Set",
         "price": 10,
         "old_price": 15,
@@ -103,49 +103,49 @@
     },
     {
         "id": 14,
-        "img": "img/product/14.png",
+        "img": "img/product/Pasted image (14).jpg",
         "name": "Chunky Platform Sneakers - All White",
         "price": 75,
         "category": "mobiles"
     },
     {
         "id": 15,
-        "img": "img/product/15.png",
+        "img": "img/product/Pasted image (15).jpg",
         "name": "Rose Water Facial Mist - Refreshing Formula",
         "price": 16,
         "category": "appliances"
     },
     {
         "id": 16,
-        "img": "img/product/16.png",
+        "img": "img/product/Pasted image (16).jpg",
         "name": "Cute Bear Airpods Pro Silicone Case",
         "price": 11,
         "category": "appliances"
     },
     {
         "id": 17,
-        "img": "img/product/17.png",
+        "img": "img/product/Pasted image (17).png",
         "name": "Ring Light with Tripod Stand for Vlogging",
         "price": 40,
         "category": "electronics"
     },
     {
         "id": 18,
-        "img": "img/product/18.png",
+        "img": "img/product/Pasted image (18).jpg",
         "name": "Wireless Over-Ear Headphones - Pink Gold",
         "price": 85,
         "category": "mobiles"
     },
     {
         "id": 19,
-        "img": "img/product/19.png",
+        "img": "img/product/Pasted image (19).jpg",
         "name": "Clay Face Mask for Deep Cleansing",
         "price": 19,
         "category": "appliances"
     },
     {
         "id": 20,
-        "img": "img/product/20.png",
+        "img": "img/product/Pasted image (20).jpg",
         "name": "Professional Makeup Brush Set (12 Pcs)",
         "price": 28,
         "old_price": 35,
@@ -153,7 +153,7 @@
     },
     {
         "id": 21,
-        "img": "img/product/21.png",
+        "img": "img/product/Pasted image (21).jpg",
         "name": "Aesthetic Desk Organizer Setup Pack",
         "price": 24,
         "category": "appliances"
