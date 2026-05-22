@@ -1,179 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHE OUT | Online Store</title>
-    <link rel="icon" href="assests/icon.png">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    
-    <link rel="stylesheet" href="css/style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-
-    <div class="cart">
-        <div class="top_cart">
-            <h3>Cart Items: <span class="Count_item_cart">0</span></h3>
-            <span onclick="toggleCartView()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
-        </div>
-
-        <div class="items_in_cart" id="cart_items">
-            </div>
-
-        <div class="bottom_cart">
-            <div class="total">
-                <p>Subtotal</p>
-                <p class="price_cart_total">$0</p>
-            </div>
-            <div class="button_cart">
-                <a href="checkout.html" class="btn_cart btn">Checkout</a>
-                <span onclick="toggleCartView()" class="btn_cart trans_bg btn">Shop More</span>
-            </div>
-        </div>
-    </div>
-
-    <header>
-        <div class="top_header">
-            <div class="container">
-                <a href="index.html" class="logo"><img src="assests/icon.png" alt="SHE OUT LOGO"></a>
-
-                <form action="" class="search_box">
-                    <div class="select_box">
-                        <select id="category" name="category">
-                            <option value="all">All Categories</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="mobiles">Mobiles</option>
-                            <option value="appliances">Appliances</option>
-                        </select>
-                    </div>
-                    <input type="search" placeholder="Search for products...">
-                    <button type="submit" class="search_btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-
-                <div class="header_icons">
-                    <span class="icon" onclick="toggleCartView()"><i class="fa-solid fa-cart-shopping"></i></span>
-                    <span class="icon" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></span>
-                </div>
-            </div>
-        </div>
-
-        <nav class="nav_bar">
-            <div class="container">
-                <span onclick="toggleCategoryMenu()" class="category_btn"><i class="fa-solid fa-bars"></i> Shop by Category</span>
-                <ul class="nav_links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <ul class="category_nav_list">
-                    <li><a href="#">Electronics</a></li>
-                    <li><a href="#">Mobiles</a></li>
-                    <li><a href="#">Appliances</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main style="max-width: 1200px; margin: 0 auto; padding: 20px;">
-        
-        <section class="slider_section" style="margin-bottom: 40px;">
-            <div class="swiper slide-swp">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="assests/Pasted image (13).png" alt="Promo 1" style="width:100%; border-radius:8px;"></div>
-                    <div class="swiper-slide"><img src="assests/Pasted image (15).png" alt="Promo 2" style="width:100%; border-radius:8px;"></div>
-                    <div class="swiper-slide"><img src="assests/banner_home3.png" alt="Promo 3" style="width:100%; border-radius:8px;"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-
-        <section class="banner_boxes" style="display: flex; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 250px;"><img src="assests/banner_box3.png" alt="Promo Box 3" style="border-radius: 6px;"></div>
-            <div style="flex: 1; min-width: 250px;"><img src="assests/banner_box4.png" alt="Promo Box 4" style="border-radius: 6px;"></div>
-            <div style="flex: 1; min-width: 250px;"><img src="assests/banner_box5.png" alt="Promo Box 5" style="border-radius: 6px;"></div>
-        </section>
-
-        <section class="products_section">
+<section class="products_section">
             <div class="section_title" style="margin-bottom: 20px;">
-                <h2>Flash Sale</h2>
+                <h2>Our Collection</h2>
             </div>
-            <div class="swiper slide_product">
-                <div id="swiper_items_sale" class="swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="products_section" style="margin-top: 50px;">
-            <div class="section_title" style="margin-bottom: 20px;">
-                <h2>Latest Electronics</h2>
-            </div>
-            <div class="swiper slide_product">
-                <div id="swiper_elctronics" class="swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="products_section" style="margin-top: 50px;">
-            <div class="section_title" style="margin-bottom: 20px;">
-                <h2>Smart Phones</h2>
-            </div>
-            <div class="swiper slide_product">
-                <div id="swiper_mobiles" class="swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-
-        <section class="products_section" style="margin-top: 50px; margin-bottom: 50px;">
-            <div class="section_title" style="margin-bottom: 20px;">
-                <h2>Home Appliances</h2>
-            </div>
-            <div class="swiper slide_product">
-                <div id="swiper_appliances" class="swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-            <div class="row">
-                <h4>Quick Links</h4>
-                <div class="links" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Your Account</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a>
+            
+            <div class="products_grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                
+                <div class="product">
+                    <span class="sale_present">Sale</span>
+                    <div class="img_product"><img src="assests/0.png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Oversized Pink Hoodie - Streetwear Edition</a></h3>
+                    <div class="price"><span>$45</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="0"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
                 </div>
-            </div>
-            <div class="row">
-                <h4>Service & Support</h4>
-                <div class="links" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
-                </div>
-            </div>
-        </div>
-        <div class="bottom_footer" style="background: var(--bg_color); padding: 20px 0; text-align: center;">
-            <div class="container">
-                <p>&copy; <span>SHE OUT STORE.</span> All Rights Reserved</p>
-                <div class="payment_img" style="margin-top: 10px;">
-                    <img src="assests/payment_method.png" alt="Payment Methods">
-                </div>
-            </div>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/items_home.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/swiper.js"></script>
-</body>
-</html>
+                <div class="product">
+                    <div class="img_product"><img src="assests/1.png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Pastel Tote Bag with Aesthetic Prints</a></h3>
+                    <div class="price"><span>$20</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="1"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/2.png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Matte Liquid Lipstick Set (5 Shades)</a></h3>
+                    <div class="price"><span>$35</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="2"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (3).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Hydrating Serum with Hyaluronic Acid</a></h3>
+                    <div class="price"><span>$25</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="3"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (4).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Cargo Pants - Cyber Pink Style</a></h3>
+                    <div class="price"><span>$55</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="4"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (5).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Silver Butterfly Chain Necklace</a></h3>
+                    <div class="price"><span>$15</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="5"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <span class="sale_present">Sale</span>
+                    <div class="img_product"><img src="assests/Pasted image (6).png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Aesthetic Claw Clips Set (4 Packs)</a></h3>
+                    <div class="price"><span>$12</span> <div class="old_price"><span>$18</span></div></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="6"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <span class="sale_present">Sale</span>
+                    <div class="img_product"><img src="assests/Pasted image (7).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Glow Face Palette - Highlighter & Blush</a></h3>
+                    <div class="price"><span>$30</span> <div class="old_price"><span>$40</span></div></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="7"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (8).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Cropped Denim Jacket - Vintage Wash</a></h3>
+                    <div class="price"><span>$60</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="8"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <span class="sale_present">Sale</span>
+                    <div class="img_product"><img src="assests/Pasted image (9).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Retro Oval Sunglasses - Pink Tint</a></h3>
+                    <div class="price"><span>$18</span> <div class="old_price"><span>$25</span></div></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="9"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (10).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Velvet Scrunchies Pack of 6</a></h3>
+                    <div class="price"><span>$8</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="10"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (11).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Graphic Print Tee - Graphic Pink Art</a></h3>
+                    <div class="price"><span>$22</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="11"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (12).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Moisturizing Lip Oil - Cherry Glow</a></h3>
+                    <div class="price"><span>$14</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="12"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <span class="sale_present">Sale</span>
+                    <div class="img_product"><img src="assests/Pasted image (13).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Mini Makeup Blender Sponge Set</a></h3>
+                    <div class="price"><span>$10</span> <div class="old_price"><span>$15</span></div></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="13"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (14).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Chunky Platform Sneakers - All White</a></h3>
+                    <div class="price"><span>$75</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="14"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (15).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Rose Water Facial Mist - Refreshing Formula</a></h3>
+                    <div class="price"><span>$16</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="15"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (16).jpg" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Cute Bear Airpods Pro Silicone Case</a></h3>
+                    <div class="price"><span>$11</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="16"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (17).png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Ring Light with Tripod Stand for Vlogging</a></h3>
+                    <div class="price"><span>$40</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="17"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (18).png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Wireless Over-Ear Headphones - Pink Gold</a></h3>
+                    <div class="price"><span>$85</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="18"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (19).png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Clay Face Mask for Deep Cleansing</a></h3>
+                    <div class="price"><span>$19</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="19"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <span class="sale_present">Sale</span>
+                    <div class="img_product"><img src="assests/Pasted image (20).png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Professional Makeup Brush Set (12 Pcs)</a></h3>
+                    <div class="price"><span>$28</span> <div class="old_price"><span>$35</span></div></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="20"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+                <div class="product">
+                    <div class="img_product"><img src="assests/Pasted image (21).png" alt=""></div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <h3 class="name_product"><a href="#">Aesthetic Desk Organizer Setup Pack</a></h3>
+                    <div class="price"><span>$24</span></div>
+                    <div class="icons"><span class="btn_add_cart" data-id="21"><i class="fa-solid fa-cart-shopping"></i> Add to cart</span></div>
+                </div>
+
+            </div>
+        </section>
