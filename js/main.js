@@ -5,6 +5,13 @@ function toggleCartView() {
     if (cartEl) cartEl.classList.toggle('active');
 }
 
+function toggleCategoryMenu() {
+    const categoryNav = document.querySelector('.category_nav_list');
+    if (categoryNav) {
+        categoryNav.classList.toggle('active');
+    }
+}
+
 function addToCart(product) {
     const exist = cart.find(item => item.id == product.id);
     if (exist) {
@@ -84,31 +91,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const categorySelect = document.getElementById('category') || document.querySelector('select');
     const searchForm = document.querySelector('.search_box') || document.querySelector('form');
 
-    function superLiveFilter() {
+    function superLiveFilter(forcedCategory = null) {
         const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
-        const selectedCategory = categorySelect ? categorySelect.value.toLowerCase() : 'all';
         
-        // بيلقط كروت المنتجات بأي طريقة كلاس سليم
+        let selectedCategory = categorySelect ? categorySelect.value.toLowerCase() : 'all';
+        if (forcedCategory) {
+            selectedCategory = forcedCategory.toLowerCase();
+            if (categorySelect) categorySelect.value = forcedCategory;
+        }
+        
         const products = document.querySelectorAll('.product, [class*="product"]');
 
         products.forEach(product => {
             if (product.classList.contains('cart') || product.classList.contains('item_cart') || product.closest('footer') || product.closest('.cart')) return;
 
             const productText = product.innerText.toLowerCase();
-            let productCategory = 'all';
-            
-            if (productText.includes('hoodie') || productText.includes('pants') || productText.includes('jacket') || productText.includes('tee') || productText.includes('sneakers')) {
-                productCategory = 'clothes';
-            } else if (productText.includes('lipstick') || productText.includes('serum') || productText.includes('palette') || productText.includes('oil') || productText.includes('mist') || productText.includes('mask') || productText.includes('brush') || productText.includes('sponge')) {
-                productCategory = 'beauty';
-            } else if (productText.includes('bag') || productText.includes('necklace') || productText.includes('clips') || productText.includes('sunglasses') || productText.includes('scrunchies') || productText.includes('case') || productText.includes('light') || productText.includes('headphones') || productText.includes('organizer')) {
-                productCategory = 'accessories';
+            let isTargetCategory = false;
+
+            if (selectedCategory === 'all') {
+                isTargetCategory = true;
+            } else if (selectedCategory === 'clothes' && (product.classList.contains('clothes') || productText.includes('hoodie') || productText.includes('pants') || productText.includes('jacket') || productText.includes('tee') || productText.includes('sneakers'))) {
+                isTargetCategory = true;
+            } else if (selectedCategory === 'beauty' && (product.classList.contains('beauty') || productText.includes('lipstick') || productText.includes('serum') || productText.includes('palette') || productText.includes('oil') || productText.includes('mist') || productText.includes('mask') || productText.includes('brush') || productText.includes('sponge'))) {
+                isTargetCategory = true;
+            } else if (selectedCategory === 'accessories' && (product.classList.contains('accessories') || productText.includes('bag') || productText.includes('tote') || productText.includes('necklace') || productText.includes('clips') || productText.includes('sunglasses') || productText.includes('scrunchies') || productText.includes('case') || productText.includes('light') || productText.includes('headphones') || productText.includes('organizer'))) {
+                isTargetCategory = true;
             }
 
             const matchesSearch = productText.includes(searchTerm);
-            const matchesCategory = (selectedCategory === 'all' || productCategory === selectedCategory);
 
-            if (matchesSearch && matchesCategory) {
+            if (matchesSearch && isTargetCategory) {
                 product.style.setProperty('display', 'block', 'important');
             } else {
                 product.style.setProperty('display', 'none', 'important');
@@ -116,8 +128,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    if (searchInput) searchInput.addEventListener('input', superLiveFilter);
-    if (categorySelect) categorySelect.addEventListener('change', superLiveFilter);
+    const categoryLinks = document.querySelectorAll('.category_nav_list a');
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const text = link.innerText.toLowerCase();
+            let targetCat = 'all';
+            
+            if (text.includes('streetwear')) targetCat = 'clothes';
+            else if (text.includes('beauty') || text.includes('makeup')) targetCat = 'beauty';
+            else if (text.includes('accessories')) targetCat = 'accessories';
+            
+            superLiveFilter(targetCat);
+            toggleCategoryMenu();
+        });
+    });
+
+    if (searchInput) searchInput.addEventListener('input', () => superLiveFilter());
+    if (categorySelect) categorySelect.addEventListener('change', () => superLiveFilter());
     if (searchForm) {
         searchForm.addEventListener('submit', function(e) {
             e.preventDefault();
