@@ -24,7 +24,7 @@ A very simple e-commerce website , that the seller can use by editing on the cod
 
 ## How To Use
 
-First open the web from the demo and it will open this enterfce page 
+First open the web from the demo and it will open this enterface page 
 
 ![Project Preview](./some%20screenshot/Screenshot%20from%202026-05-24%2013-18-30.png)
 
